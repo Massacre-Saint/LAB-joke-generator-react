@@ -1,3 +1,5 @@
+import JokeGen from '../components/JokeGen';
+
 function Home() {
   return (
     <div
@@ -9,7 +11,7 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <h1>Welcome Home!</h1>
+      <JokeGen />
     </div>
   );
 }
