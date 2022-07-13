@@ -4,14 +4,19 @@ import getJoke from '../api/jokeData';
 function JokeGen() {
   const [joke, setJoke] = useState('');
   const handleClick = () => {
-    getJoke().then((object) => {
-      setJoke(`${object.setup}`);
+    getJoke().then((response) => {
+      setJoke(`${response.setup}`);
     });
   };
+  // const getPunchline = () => {
+  //   getJoke().then((response) => {
+  //     setJoke(`${response.delivery}`);
+  //   });
+  // };
   return (
     <>
-      {joke}
-      {joke !== null ? <button type="button" onClick={handleClick}>Get a Joke</button> : <button type="button">Get punchline</button>}
+      <h3>{joke}</h3>
+      {joke ? <button type="button" onClick={() => handleClick}>Get Punchline</button> : <button type="button" onClick={() => handleClick()}>Get a Joke</button>}
     </>
   );
 }
